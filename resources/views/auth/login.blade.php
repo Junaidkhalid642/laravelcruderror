@@ -1,11 +1,10 @@
+@extends('layouts.header')
 
-@extends('layout.header')
- 
 @section('content')
- 
+
     <!-- /.login-logo -->
     <div class="login-box-body">
- 
+
         <!-- for validation errors -->
         @if(count($errors) > 0)
             <div id="error" class="alert alert-danger alert-dismissable">
@@ -16,9 +15,9 @@
                 @endforeach
             </div>
         @endif
- 
- 
- 
+
+
+
         @if(Session::get('error_msg'))
             <div class="alert alert-danger alert-dismissable">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
@@ -32,11 +31,11 @@
                 {{Session::get('success_msg')}}
             </div>
         @endif
- 
- 
- 
+
+
+
         <p class="login-box-msg">Sign in</p>
- 
+
         <form method="post" action="{{url('login')}}">
             <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
             <div class="form-group has-feedback">
@@ -55,9 +54,9 @@
                 <!-- /.col -->
             </div>
         </form>
- 
+
         <a href="{{url('register')}}">Click here to register</a>
- 
+
     </div>
     <!-- /.login-box-body -->
     </div>

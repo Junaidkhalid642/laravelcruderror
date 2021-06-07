@@ -1,20 +1,20 @@
 <?php
- 
+
 namespace App\Http\Controllers\Auth;
- 
+
 use App\Http\Controllers\Controller;
-use App\User;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
- 
+
 class LoginController extends Controller
 {
- 
+
     public function getLogin(){
-        return view('login');
+        return view('auth.login');
     }
- 
+
     public function postLogin(Request $request){
         try {
             $message = trans('messages.invalid_login_credentials');
@@ -33,11 +33,11 @@ class LoginController extends Controller
         }
         return redirect('/login')->with('error_msg', $message);
     }
- 
- 
+
+
     public function logoutUser(Request $request){
         Auth::logout();
         return redirect('/login');
     }
- 
+
 }

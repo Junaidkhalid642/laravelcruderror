@@ -1,11 +1,11 @@
-@extends('layout.header')
- 
+@extends('layouts.header')
+
 @section('content')
- 
-    @include('layout.user-headers')
+
+    @include('layouts.user-headers')
     <!-- /.login-logo -->
     <div class="login-box-body">
- 
+
         <!-- for validation errors -->
         @if(count($errors) > 0)
             <div id="error" class="alert alert-danger alert-dismissable">
@@ -16,9 +16,9 @@
                 @endforeach
             </div>
         @endif
- 
- 
- 
+
+
+
         @if(Session::get('error_msg'))
             <div class="alert alert-danger alert-dismissable">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
@@ -32,11 +32,11 @@
                 {{Session::get('success_msg')}}
             </div>
         @endif
- 
- 
- 
+
+
+
         <p class="login-box-msg">Update User</p>
- 
+
         <form method="post" action="{{url('update')}}">
             {{csrf_field()}}
             <div class="form-group has-feedback">
@@ -53,7 +53,7 @@
                 <!-- /.col -->
             </div>
         </form>
- 
+
     </div>
     <!-- /.login-box-body -->
     </div>

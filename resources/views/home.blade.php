@@ -1,5 +1,5 @@
-@include('layout.header')
-@include('layout.user-headers')
+@include('layouts.header')
+@include('layouts.user-headers')
 @if(Session::get('error_msg'))
     <div class="alert alert-danger alert-dismissable">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
@@ -50,7 +50,7 @@
         {
             return false;
         }
- 
+
     });
     </script>
 </html>
